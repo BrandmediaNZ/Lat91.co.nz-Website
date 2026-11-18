@@ -176,21 +176,22 @@ h1, h2, p { margin: 0; }
   padding: 6px 0; }
 .read-more:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-.svc-hero--shipping { --tx: 10.76%; --ty: 35.2%; --text-top: 13.1vw; --rm-right: 9.17vw; --pr: 6vw; }
-.svc-hero--tourism  { --tx: 11.1%;  --ty: 42.7%; --text-top: 13.6vw;  --rm-right: 5.9vw;  --pr: 4.2vw; }
-.svc-hero--property { --tx: 8.9%;   --ty: 35.2%; --text-top: 15.26vw; --rm-right: 5.9vw;  --pr: 5.4vw; --rm-bottom: 5vw; }
+.svc-hero--shipping { --tx: 10.76%; --ty: 35.2%; --text-top: 11.2vw; --rm-right: 9.17vw; --pr: 6vw; }
+.svc-hero--tourism  { --tx: 11.1%;  --ty: 42.7%; --text-top: 11.3vw;  --rm-right: 5.9vw;  --pr: 4.2vw; }
+.svc-hero--property { --tx: 8.9%;   --ty: 35.2%; --text-top: 14.2vw; --rm-right: 5.9vw;  --pr: 5.4vw; --rm-bottom: 5vw; }
 
 /* Action row: Back (left) · Peter Bissett + LETS TALK (right) */
 .svc-actions { position: absolute; left: 6.6vw; right: var(--pr, 5.5vw); bottom: var(--rm-bottom, 4.1vw);
-  display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .back-home { font-weight: 700; font-size: clamp(12px, 1.235vw, 17px); text-decoration: none; text-transform: uppercase;
-  line-height: 1; padding: 6px 0 calc(.75em + 2px); }
+  line-height: 1; padding: 6px 0; }
 .back-home:hover { text-decoration: underline; text-underline-offset: 4px; }
-.svc-contact { display: flex; align-items: flex-end; gap: clamp(12px, 1.5vw, 22px); }
-.talk-stack { display: flex; flex-direction: column; align-items: flex-end; gap: 1.2em; }
+.svc-contact { display: flex; align-items: center; gap: clamp(12px, 1.5vw, 22px); }
+/* lead-in floats above the button so the name stays right beside the button */
+.talk-stack { position: relative; }
 .talk-lead { font-weight: 700; font-size: clamp(13px, 1.4vw, 20px); line-height: 1.2; white-space: nowrap;
-  margin-right: -.09em; /* optical: last dot's ink ends flush with the button edge */ }
-.svc-contact__name { padding-bottom: .55em; }
+  position: absolute; right: -.09em; /* optical: last dot ends flush with the button edge */
+  bottom: calc(100% + 1.2em); }
 .svc-contact__name { font-weight: 400; font-size: clamp(14px, 1.5vw, 21px); white-space: nowrap; }
 .btn-talk { display: inline-block; background: var(--red); color: #fff; border: 2px solid var(--red);
   font-weight: 700; font-size: clamp(12px, 1.235vw, 17px); letter-spacing: .04em; text-transform: uppercase;
@@ -292,8 +293,8 @@ h1, h2, p { margin: 0; }
   .svc-hero__wedge { display: none; }
   .svc-hero__text { margin-top: 0; font-size: 17px; line-height: 1.5; }
   .read-more { position: static; display: block; width: max-content; margin: 22px 0 0 auto; font-size: 14px; }
-  .svc-actions { position: static; margin-top: 26px; flex-wrap: wrap; row-gap: 18px; }
-  .back-home { font-size: 14px; padding-bottom: 15px; }
+  .svc-actions { position: static; margin-top: 60px; flex-wrap: wrap; row-gap: 18px; }
+  .back-home { font-size: 14px; }
   .svc-contact__name { font-size: 16px; }
   .talk-lead { font-size: 15px; }
   .btn-talk { font-size: 14px; padding: 13px 22px; }
