@@ -8,6 +8,8 @@
 /* ---------- Fonts (Figtree: closest open licence match to Geoform) ------ */
 @font-face { font-family: "Figtree"; font-weight: 300; font-style: normal; font-display: swap;
   src: url("../fonts/figtree-latin-300-normal.woff2") format("woff2"); }
+@font-face { font-family: "Figtree"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("../fonts/figtree-latin-400-normal.woff2") format("woff2"); }
 @font-face { font-family: "Figtree"; font-weight: 500; font-style: normal; font-display: swap;
   src: url("../fonts/figtree-latin-500-normal.woff2") format("woff2"); }
 @font-face { font-family: "Figtree"; font-weight: 700; font-style: normal; font-display: swap;
@@ -18,6 +20,7 @@
   --navy: #002659;        /* intro band, overlays */
   --ink: #002559;         /* footer + about text */
   --blue: #004182;        /* service content panel */
+  --red: #e0230f;         /* LETS TALK button – logo red, deepened slightly for text contrast */
   --grey: #d4d5d5;        /* footer */
   --pale: #e5ecf2;        /* about page background */
   --white: #fff;
@@ -173,9 +176,24 @@ h1, h2, p { margin: 0; }
   padding: 6px 0; }
 .read-more:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-.svc-hero--shipping { --tx: 10.76%; --ty: 35.2%; --text-top: 14.73vw; --rm-right: 9.17vw; --pr: 6vw; }
+.svc-hero--shipping { --tx: 10.76%; --ty: 35.2%; --text-top: 13.1vw; --rm-right: 9.17vw; --pr: 6vw; }
 .svc-hero--tourism  { --tx: 11.1%;  --ty: 42.7%; --text-top: 13.6vw;  --rm-right: 5.9vw;  --pr: 4.2vw; }
 .svc-hero--property { --tx: 8.9%;   --ty: 35.2%; --text-top: 15.26vw; --rm-right: 5.9vw;  --pr: 5.4vw; --rm-bottom: 5vw; }
+
+/* Action row: Back (left) · Peter Bissett + LETS TALK (right) */
+.svc-actions { position: absolute; left: 6.6vw; right: var(--pr, 5.5vw); bottom: var(--rm-bottom, 4.1vw);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.back-home { font-weight: 700; font-size: clamp(12px, 1.235vw, 17px); text-decoration: none; text-transform: uppercase;
+  padding: 6px 0; }
+.back-home:hover { text-decoration: underline; text-underline-offset: 4px; }
+.svc-contact { display: flex; align-items: center; gap: clamp(12px, 1.5vw, 22px); }
+.svc-contact__name { font-weight: 400; font-size: clamp(14px, 1.5vw, 21px); white-space: nowrap; }
+.btn-talk { display: inline-block; background: var(--red); color: #fff; border: 2px solid var(--red);
+  font-weight: 700; font-size: clamp(12px, 1.235vw, 17px); letter-spacing: .04em; text-transform: uppercase;
+  text-decoration: none; white-space: nowrap; padding: .75em 1.5em; line-height: 1;
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+.btn-talk:hover, .btn-talk:focus-visible { background: #fff; color: var(--red); border-color: #fff; }
+.btn-talk:focus-visible { outline: 3px solid #ffb81c; outline-offset: 3px; }
 
 /* ==========================================================================
    ABOUT page
@@ -270,6 +288,10 @@ h1, h2, p { margin: 0; }
   .svc-hero__wedge { display: none; }
   .svc-hero__text { margin-top: 0; font-size: 17px; line-height: 1.5; }
   .read-more { position: static; display: block; width: max-content; margin: 22px 0 0 auto; font-size: 14px; }
+  .svc-actions { position: static; margin-top: 26px; flex-wrap: wrap; row-gap: 18px; }
+  .back-home { font-size: 14px; }
+  .svc-contact__name { font-size: 16px; }
+  .btn-talk { font-size: 14px; padding: 13px 22px; }
 
   .about { padding: 34px 22px 34px; }
   .about__body p { text-align: left; }
@@ -282,7 +304,10 @@ h1, h2, p { margin: 0; }
 
 /* Tablet tweak: keep desktop composition but stop tiny type */
 @media (min-width: 761px) and (max-width: 1000px) {
-  .svc-hero__text { font-size: 15px; line-height: 1.35; }
+  .svc-hero__text { font-size: 14px; line-height: 1.35; }
+  .svc-hero--tourism { --text-top: 11.5vw; }
+  .svc-actions { bottom: 3vw; }
+  .btn-talk { padding: .6em 1.1em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
