@@ -245,6 +245,17 @@ h1, h2, p { margin: 0; }
 .footer-col :focus-visible { outline-color: var(--blue); }
 
 /* ==========================================================================
+   LANDING page (parked site) — landing.html
+   ========================================================================== */
+div.panel { cursor: default; }
+.intro .intro__soon { font-size: clamp(26px, 3.6vw, 52px); letter-spacing: .04em; line-height: 1.2; }
+.footer-email { display: flex; justify-content: center; align-items: center; gap: 9px; }
+.footer-email svg { flex: none; width: 21px; height: 21px; }
+.footer-email a { font-weight: 500; font-size: 14px; text-decoration: none; color: var(--ink); line-height: 21px; }
+.footer-email a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.footer-email a:focus-visible { outline-color: var(--blue); }
+
+/* ==========================================================================
    Mobile (≤ 760px): stacked panels, diagonals kept as slanted edges
    ========================================================================== */
 @media (max-width: 760px) {
